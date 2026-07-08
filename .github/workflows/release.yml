@@ -1,0 +1,12 @@
+name: Release and Publish
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  publish-package:
+    uses: yukiakai212/actions-public/.github/workflows/publish-package.yml@v1
+
+    secrets: inherit

@@ -1,0 +1,76 @@
+{
+  "name": "coalesced-runner",
+  "version": "1.1.1",
+  "description": "Lightweight async task coalescer. Prevents race conditions by ensuring tasks run sequentially and coalesce repeated calls.",
+  "type": "module",
+  "main": "./dist/public.js",
+  "types": "./dist/public.d.ts",
+  "exports": {
+    "types": "./dist/public.d.ts",
+    "import": "./dist/public.js",
+    "require": "./dist/public.cjs"
+  },
+  "scripts": {
+    "test": "npx vitest run --reporter verbose --coverage",
+    "format": "prettier --write **/*.{js,ts,json}",
+    "format:check": "prettier --check **/*.{js,ts,json}",
+    "lint": "eslint src/**/*.ts",
+    "typecheck:workspace": "tsc -p tsconfig.workspace.json",
+    "build": "npx tsup",
+    "build:public": "npx tsup --config tsup.public.config.ts",
+    "docs": "npx typedoc",
+    "prepare:artifact": "tsx workspace/release/prepareArtifact.ts",
+    "prepare": "is-ci || husky"
+  },
+  "files": [
+    "dist/*",
+    "CHANGELOG.md"
+  ],
+  "keywords": [
+    "async",
+    "coalesce",
+    "dedupe",
+    "concurrency",
+    "scheduler",
+    "race-condition",
+    "task-runner"
+  ],
+  "author": "Yuki_akai",
+  "homepage": "https://github.com/yukiakai212/coalesced-runner.js",
+  "funding": "https://github.com/sponsors/yukiakai212",
+  "engines": {
+    "node": ">= 16"
+  },
+  "maintainers": [
+    {
+      "name": "Yuki_akai",
+      "homepage": "https://github.com/yukiakai212"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yukiakai212/coalesced-runner.js.git"
+  },
+  "bugs": {
+    "url": "https://github.com/yukiakai212/coalesced-runner.js/issues"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "@changesets/cli": "^2.29.8",
+    "@eslint/js": "^9.30.1",
+    "@types/node": "^24.0.10",
+    "@vitest/coverage-v8": "^4.0.15",
+    "@yukiakai/artifact": "^1.0.1",
+    "dotenv": "^17.0.1",
+    "eslint": "^9.30.0",
+    "husky": "^9.1.7",
+    "is-ci": "^4.1.0",
+    "prettier": "^3.6.2",
+    "tsup": "^8.5.1",
+    "tsx": "^4.20.3",
+    "typedoc": "^0.28.9",
+    "typescript": "^5.8.3",
+    "typescript-eslint": "^8.35.1",
+    "vitest": "^4.0.15"
+  }
+}
