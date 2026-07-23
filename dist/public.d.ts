@@ -53,4 +53,4 @@ declare class CoalescedRunnerError extends Error implements RunnerError {
     constructor(cause: unknown, meta: RunnerEventMeta);
 }
 
-export { type AsyncFn, CoalescedRunner, CoalescedRunnerError, type RunnerDescriptor, type RunnerError, type RunnerEventMeta, type RunnerFnDescriptor, type RunnerKey, type RunnerKeyDescriptor, type RunnerRuntimeMeta, RunnerType, globalRunner };
+export { type AsyncFn, CoalescedRunner, CoalescedRunnerError, type RunnerDescriptor, type RunnerError, type RunnerEventMeta, type RunnerFnDescriptor, type RunnerId, type RunnerKey, type RunnerKeyDescriptor, type RunnerRuntimeMeta, RunnerType, globalRunner };
